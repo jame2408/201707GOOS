@@ -24,18 +24,6 @@ namespace GOOS_SampleTests.Steps
             this._budgetCreatePage.Go();
         }
 
-        [Given(@"Budget table existed budgets")]
-        public void GivenBudgetTableExistedBudgets(Table table)
-        {
-
-            var budgets = table.CreateSet<Budget>();
-            using (var dbcontext = new GOOSEntitiesForTest())
-            {
-                dbcontext.Budgets.AddRange(budgets);
-                dbcontext.SaveChanges();
-            }
-        }
-
         [When(@"I add a buget (.*) for ""(.*)""")]
         public void WhenIAddABugetFor(int amount, string yearMonth)
         {
