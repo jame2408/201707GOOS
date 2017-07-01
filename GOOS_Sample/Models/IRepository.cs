@@ -1,9 +1,11 @@
-﻿using GOOS_Sample.Models.DataModels;
+﻿using System;
+using GOOS_Sample.Models.DataModels;
 
 namespace GOOS_Sample.Models
 {
     public interface IRepository<T>
     {
         void Save(T Entity);
+        void Read(Func<T, bool> predicate);
     }
 }

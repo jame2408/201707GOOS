@@ -1,4 +1,5 @@
-﻿using GOOS_Sample.Models.DataModels;
+﻿using System;
+using GOOS_Sample.Models.DataModels;
 
 namespace GOOS_Sample.Models
 {
@@ -11,6 +12,11 @@ namespace GOOS_Sample.Models
                 dbcontext.Budgets.Add(budget);
                 dbcontext.SaveChanges();
             }
+        }
+
+        public void Read(Func<Budget, bool> predicate)
+        {
+            throw new NotImplementedException();
         }
     }
 }
