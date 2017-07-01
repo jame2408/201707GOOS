@@ -62,6 +62,7 @@ namespace GOOS_SampleTests.Steps.Comment
         public static void RegisterDIContainer()
         {
             UnityContainer = new UnityContainer();
+            UnityContainer.RegisterType<IRepository<GOOS_Sample.Models.DataModels.Budget>, BudgetRepository>();
             UnityContainer.RegisterType<IBudgetService, BudgetService>();
         }
         public static IUnityContainer UnityContainer

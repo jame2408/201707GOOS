@@ -17,14 +17,6 @@ namespace GOOS_Sample.Models
 
             var budget = new Budget() { Amount = model.Amount, YearMonth = model.Month };
             this._budgetRepository.Save(budget);
-
-            //using (var dbcontext = new GOOSEntities())
-            //{
-            //    var budget = new Budget() { Amount = model.Amount, YearMonth = model.Month };
-            //    dbcontext.Budgets.Add(budget);
-
-            //    dbcontext.SaveChanges();
-            //}
         }
     }
 }
