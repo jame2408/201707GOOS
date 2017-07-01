@@ -61,5 +61,36 @@ namespace GOOS_SampleTests.Steps
                 table.CompareToInstance(budget);
             }
         }
+
+        [Given(@"go to adding budget page")]
+        public void GivenGoToAddingBudgetPage()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Given(@"Budget table existed budgets")]
+        public void GivenBudgetTableExistedBudgets(Table table)
+        {
+
+            var budgets = table.CreateSet<Budget>();
+            using (var dbcontext = new GOOSEntitiesForTest())
+            {
+                dbcontext.Budgets.AddRange(budgets);
+                dbcontext.SaveChanges();
+            }
+        }
+
+        [When(@"I add a buget (.*) for ""(.*)""")]
+        public void WhenIAddABugetFor(int p0, string p1)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
+        [Then(@"it should display ""(.*)""")]
+        public void ThenItShouldDisplay(string p0)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }
