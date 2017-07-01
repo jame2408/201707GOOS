@@ -6,6 +6,6 @@ namespace GOOS_Sample.Models
     public interface IRepository<T>
     {
         void Save(T Entity);
-        void Read(Func<T, bool> predicate);
+        T Read(Func<T, bool> predicate);
     }
 }
