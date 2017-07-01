@@ -1,4 +1,5 @@
-﻿using GOOS_Sample.Models.DataModels;
+﻿using System;
+using GOOS_Sample.Models.DataModels;
 using GOOS_Sample.Models.ViewModels;
 
 namespace GOOS_Sample.Models
@@ -11,6 +12,9 @@ namespace GOOS_Sample.Models
         {
             _budgetRepository = budgetRepository;
         }
+
+        public event EventHandler Created;
+        public event EventHandler Updated;
 
         public void Create(BudgetAddViewModel model)
         {
